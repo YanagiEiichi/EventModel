@@ -1,7 +1,5 @@
 ## EventModel
 
-------
-
 #### Demo
 
 ```html
