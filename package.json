@@ -1,6 +1,6 @@
 {
   "name": "EventModel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A bubblable event model",
   "main": "eventmodel.js",
   "scripts": {
