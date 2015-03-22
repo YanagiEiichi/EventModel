@@ -5,7 +5,6 @@
   AUTHOR: yanagieiichi@web-tinker.com
   GIT: git@github.com:YanagiEiichi/EventModel
 ************************************************/
-var EventModel;
 void function(){
   // Shared heap
   var map=new WeakMap;
@@ -38,7 +37,7 @@ void function(){
     };
   }();
   // Main constructor
-  EventModel=function(prototype){
+  var EventModel=function(prototype){
     if(!(this instanceof EventModel))return new EventModel(prototype);
     this.on=EventModel.on.bind(null,this);
     this.off=EventModel.off.bind(null,this);
@@ -65,6 +64,15 @@ void function(){
       if(getEventStatus(event))target=null;
       else target=Object.getPrototypeOf(target);
     }; 
+  };
+  // Install
+  switch(true){
+    case typeof module=='object'&&typeof module.exports=='object': // For Node
+      return module.exports=EventModel;
+    case typeof define=='function'&&typeof define.amd!='undefined': // For AMD
+      return define(function(){return EventModel;});
+    default: // Global Installing
+      Function('EventModel','this.EventModel=EventModel;')(EventModel);
   };
 }();
 
