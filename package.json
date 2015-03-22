@@ -1,0 +1,23 @@
+{
+  "name": "EventModel",
+  "version": "2.0.0",
+  "description": "A bubblable event model",
+  "main": "eventmodel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YanagiEiichi/EventModel"
+  },
+  "keywords": [
+    "event",
+    "bubbling"
+  ],
+  "author": "YanagiEiichi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YanagiEiichi/EventModel/issues"
+  },
+  "homepage": "https://github.com/YanagiEiichi/EventModel"
+}
