@@ -17,10 +17,10 @@ void function() {
   };
   // Private Event Class
   var Event, getEventStatus;
-  void function(){
+  void function() {
     // Init the heap for Event constructor
     var eMap = new WeakMap();
-    Event = function(type, target){
+    Event = function(type, target) {
       eMap.set(this, 0);
       this.type = type;
       this.target = target;
@@ -53,13 +53,13 @@ void function() {
     var list = touch(target, name);
     list.splice(list.indexOf(handler), 1);
   };
-  EventModel.trigger = function(target, name, args){
+  EventModel.trigger = function(target, name, args) {
     var event = new Event(name, target);
     while(target) {
       touch(target, name).some(function(handler) {
         var propagation = true;
         handler.apply(target,[event].concat(args));
-        return getEventStatus(event) == 2;
+        return getEventStatus(event) === 2;
       });
       // Bubble 
       if(getEventStatus(event)) target = null;
