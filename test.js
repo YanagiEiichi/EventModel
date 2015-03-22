@@ -1,8 +1,3 @@
-## EventModel
-
-#### Demo
-
-```js
 var EventModel = require('./eventmodel.js');
 
 // Define a constructor A
@@ -36,5 +31,4 @@ EventModel.on(Object.prototype, 'test', function(e) {
 // Trigger the 'test' event on 'a',
 // the event will bubbling along its prototype chain
 EventModel.trigger(a, 'test');
-```
 
