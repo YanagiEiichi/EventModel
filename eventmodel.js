@@ -40,9 +40,9 @@ void function() {
   // Main constructor
   var EventModel = function(prototype) {
     if(!(this instanceof EventModel)) return new EventModel(prototype);
-    this.on = EventModel.on.bind(null, this);
-    this.off = EventModel.off.bind(null, this);
-    this.trigger = EventModel.trigger.bind(null, this);
+    this.on = function(name, handler) { EventModel.on(this, name, handler); return this; };
+    this.off = function(name, handler) { EventModel.off(this, name, handler); return this; };
+    this.trigger = function(name, args) { EventModel.trigger(this, name, args); return this; };
     if(prototype) Object.setPrototypeOf(this, prototype);
   };
   // Public static methods
